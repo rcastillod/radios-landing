@@ -1,27 +1,27 @@
 {
-  "name": "gulp-with-tailwindcss",
+  "name": "landing-radios",
   "version": "1.2.0",
-  "description": "TailwindCSS StarterKit with Gulp 4",
+  "description": "Landing para radios",
   "main": "gulpfile.js",
   "dependencies": {
-    "postcss": "^8.1.14",
-    "tailwindcss": "^2.0.1"
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.4",
-    "browser-sync": "^2.26.13",
+    "autoprefixer": "^10.2.5",
+    "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
-    "gulp-purgecss": "^3.0.0",
+    "gulp-purgecss": "^4.0.2",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-terser": "^2.0.0",
+    "gulp-terser": "^2.0.1",
     "gulp-webp": "^4.0.1",
-    "log-symbols": "^4.0.0"
+    "log-symbols": "^4.1.0"
   },
   "scripts": {
     "dev": "gulp",

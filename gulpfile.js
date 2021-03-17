@@ -1,8 +1,5 @@
 /**
-*   Gulp with TailwindCSS - An CSS Utility framework                                
-*   Author : Manjunath G                                              
-*   URL : manjumjn.com                                                 
-*   Twitter : twitter.com/manju_mjn                                    
+*   Gulp with TailwindCSS - An CSS Utility framework                                                      
 **/
 
 /*
