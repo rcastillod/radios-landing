@@ -1,38 +1,244 @@
-//All styles can be added here.
-.hero-heading{
-    @apply text-4xl mb-10 text-white font-medium;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap');
+
+$primary-color: #2A2E54;
+$secondary-color: #5DFFD8;
+$text-color: #5B6663;
+$light-color: #ffffff;
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+}
+* {
+    box-sizing: border-box;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    width: 100%;
+    section {
+        padding: 50px;
+    }
 }
 
-.instructions{    
-    .sub-title{
-        @apply text-gray-900 pb-2 border-b-2 border-gray-400 mb-5 text-xl font-medium;
-
-        & + p {
-            @apply mb-3
-        }
+/** Left Section */
+.advertisements {
+    background-image: url(../img/ads-section-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, $secondary-color, $primary-color);
+        mix-blend-mode: multiply;
     }
-    .code{
-        @apply block font-mono border rounded bg-gray-100 text-gray-700 px-4 py-5 leading-normal text-sm shadow;
-
-        &.pre{
-            @apply whitespace-pre;
-        }
-
-        em{
-            @apply opacity-75;
-        }
+}
+.info-links {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    a:not(:last-child) {
+        margin-bottom: 1rem;
     }
-
+}
+.swiper-slide {
+    border-radius: 3px;
+    img {
+        width: 100%;
+    }
 }
 
-.social{
-    @apply block pt-6 text-gray-700;
-
-    a{
-        @apply text-blue-500 font-medium p-4;
-
-        &:hover{
-            @apply text-blue-700;
+/** Right Section */  
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.social {
+    display: flex;
+    &__item {
+        background-color: $secondary-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        width: 35px;
+        transition: all .3s ease-in-out;
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+        &:hover {
+            transform: rotate(-10deg) translateY(-5px);
         }
     }
+}
+.main-info {
+    position: relative;
+}
+.site-content {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 1536px) {
+        max-width: 60%;
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 80%;
+    }
+    &__title {
+        h1 {
+            color: $primary-color;
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 3.5rem;
+            @media screen and (min-width: 1280px) {
+                font-size: 4.5rem;
+                line-height: 4.5rem;
+            }
+            span {
+                color: $secondary-color;
+            }
+        }
+    }
+    &__description {
+        h4 {
+            color: $primary-color;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        p {
+            font-weight: lighter;
+        }
+    }
+}
+.player {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    h4 {
+        color: $primary-color;
+        padding-left: 50px;
+    }
+}
+.player-bar {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px 50px;
+    position: relative;
+    &:after {
+        content: url(../img/circles.svg);
+        position: absolute;
+        right: -165px;
+        top: -110px;
+        transform-origin: center;
+    }
+    &.playing {
+        &:after {
+            animation: rotate 25s infinite linear;
+        }
+    }
+    .play {
+        margin-right: 2rem;
+        img {
+            vertical-align: bottom;
+        }
+    }
+    &__track {
+        margin-right: 1.5rem;
+        .track-time {
+            color: $light-color;
+        }
+        .track-time-bar {
+            background-color: $light-color;
+            border-radius: 5px;
+            height: 5px;
+            min-width: 30rem;
+            width: 100%;
+        }
+    }
+    .volume {
+        display: flex;
+        align-items: center;
+        input[type="range"] {
+            background-color: $light-color;
+            border-radius: 4px;
+            height: 5px;
+            margin: 0 0.5rem;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            // Range Handle
+            &::-webkit-slider-thumb {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: $light-color;
+                cursor: pointer;
+                transition: background .15s ease-in-out;
+
+                &:hover {
+                    background: $primary-color;
+                }
+            }
+
+            &:active::-webkit-slider-thumb {
+                background: $primary-color;
+            }
+
+            &::-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                border: 0;
+                border-radius: 50%;
+                background: $primary-color;
+                cursor: pointer;
+                transition: background .15s ease-in-out;
+
+                &:hover {
+                    background: $secondary-color;
+                }
+            }
+            &:active::-moz-range-thumb {
+                background: $secondary-color;
+            }
+            &:focus {
+                outline: none;
+            }
+            
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.whatsapp-contact {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
 }

@@ -51,10 +51,8 @@ function devHTML(){
 } 
 
 function devStyles(){
-  const tailwindcss = require('tailwindcss'); 
   return src(`${options.paths.src.css}/**/*`).pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      tailwindcss(options.config.tailwindjs),
       require('autoprefixer'),
     ]))
     .pipe(concat({ path: 'style.css'}))
@@ -75,7 +73,7 @@ function devImages(){
 
 function watchFiles(){
   watch(`${options.paths.src.base}/**/*.html`,series(devHTML, previewReload));
-  watch([options.config.tailwindjs, `${options.paths.src.css}/**/*`],series(devStyles, previewReload));
+  watch(`${options.paths.src.css}/**/*`,series(devStyles, previewReload));
   watch(`${options.paths.src.js}/**/*.js`,series(devScripts, previewReload));
   watch(`${options.paths.src.img}/**/*`,series(devImages, previewReload));
   console.log("\n\t" + logSymbols.info,"Watching for Changes..\n");
