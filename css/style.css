@@ -19,6 +19,9 @@ main {
       height: 100vh; } }
   main section {
     padding: 25px; }
+    @media screen and (max-width: 991px) {
+      main section {
+        width: 100vw; } }
     @media screen and (min-width: 576px) {
       main section {
         padding: 50px; } }
@@ -108,7 +111,7 @@ header {
     font-size: 3.5rem;
     font-weight: bold;
     line-height: 3.5rem; }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1360px) {
       .site-content__title h1 {
         font-size: 4.5rem;
         line-height: 4.5rem; } }
