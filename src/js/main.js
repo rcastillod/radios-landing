@@ -27,6 +27,7 @@ var swiper = new Swiper('.swiper-container', {
 /** Musica Player */
 const playButton = document.getElementById("play-btn");
 const playButtonImg = document.querySelector(".play-icon");
+const pauseButtonImg = document.querySelector(".pause-icon");
 const url = window.location.hostname;
 const img1 = "./img/play-icon.svg";
 const img2 = "./img/pause-icon.svg";
@@ -34,6 +35,5 @@ const playerBar = document.querySelector(".player-bar");
 
 playButton.addEventListener('click', (e) => {
     e.preventDefault();
-    playButtonImg.src = (playButtonImg.src === img1)? img2 : img1;
     playerBar.classList.toggle("playing");
 })

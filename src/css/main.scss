@@ -184,9 +184,22 @@ header {
         &:after {
             animation: rotate 25s infinite linear;
         }
+        .play {
+            margin-right: 2rem;
+            #play-btn {
+                background-image: url(../img/pause-icon.svg);
+            }
+        }
     }
     .play {
         margin-right: 2rem;
+        #play-btn {
+            display: block;
+            background-image: url(../img/play-icon.svg);
+            background-size: cover;
+            width: 30px;
+            height: 33px;
+        }
         img {
             vertical-align: bottom;
         }

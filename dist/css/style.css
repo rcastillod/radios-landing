@@ -158,8 +158,18 @@ header {
   .player-bar.playing:after {
     -webkit-animation: rotate 25s infinite linear;
             animation: rotate 25s infinite linear; }
+  .player-bar.playing .play {
+    margin-right: 2rem; }
+    .player-bar.playing .play #play-btn {
+      background-image: url(../img/pause-icon.svg); }
   .player-bar .play {
     margin-right: 2rem; }
+    .player-bar .play #play-btn {
+      display: block;
+      background-image: url(../img/play-icon.svg);
+      background-size: cover;
+      width: 30px;
+      height: 33px; }
     .player-bar .play img {
       vertical-align: bottom; }
   .player-bar__track {
