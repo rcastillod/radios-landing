@@ -1,3 +1,4 @@
+/** Advertisements Carousel */
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -37,3 +38,24 @@ playButton.addEventListener('click', (e) => {
     e.preventDefault();
     playerBar.classList.toggle("playing");
 })
+
+/** Mobile Menu Info */
+jQuery(document).ready(function(){
+	if( $('.mobile-info').length > 0 ) {
+		var stretchyNavs = $('.mobile-info');
+		
+		stretchyNavs.each(function(){
+			var stretchyNav = $(this),
+				stretchyNavTrigger = stretchyNav.find('.mobile-info__trigger');
+			
+			stretchyNavTrigger.on('click', function(event){
+				event.preventDefault();
+				stretchyNav.toggleClass('visible');
+			});
+		});
+
+		$(document).on('click', function(event){
+			( !$(event.target).is('.mobile-info__trigger') && !$(event.target).is('.mobile-info__trigger span') ) && stretchyNavs.removeClass('visible');
+		});
+	}
+});
