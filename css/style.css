@@ -9,6 +9,10 @@ body, html {
 * {
   box-sizing: border-box; }
 
+ul, ol {
+  list-style: none;
+  margin: 0; }
+
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -80,7 +84,10 @@ header {
   justify-content: space-between; }
 
 .social {
-  display: flex; }
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .social {
+      display: flex; } }
   .social__item {
     background-color: #5DFFD8;
     border-radius: 50%;
@@ -94,6 +101,194 @@ header {
       margin-right: .5rem; }
     .social__item:hover {
       transform: rotate(-10deg) translateY(-5px); }
+
+.mobile-info {
+  position: fixed;
+  z-index: 2;
+  top: 40px;
+  right: 5%;
+  pointer-events: none; }
+  @media screen and (min-width: 768px) {
+    .mobile-info {
+      display: none; } }
+  .mobile-info__bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: #5DFFD8;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: height .2s,box-shadow .2s; }
+  .mobile-info.visible {
+    pointer-events: auto; }
+  .mobile-info.visible .mobile-info__bg {
+    height: 100%;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); }
+  .mobile-info__trigger {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    /* replace text with image */
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+    pointer-events: auto; }
+    .mobile-info__trigger span,
+    .mobile-info__trigger span::after,
+    .mobile-info__trigger span::before {
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: #2A2E54; }
+    .mobile-info__trigger span {
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      transform: translateX(-50%) translateY(-50%);
+      transition: background-color .2s; }
+    .mobile-info__trigger span::after,
+    .mobile-info__trigger span::before {
+      /* top and bottom lines of the hamburger icon */
+      content: '';
+      top: 0;
+      left: 0;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      transition: transform .2s; }
+    .mobile-info__trigger span::before {
+      transform: translateY(-6px); }
+    .mobile-info__trigger span::after {
+      transform: translateY(6px); }
+    .no-touch .mobile-info__trigger:hover ~ .mobile-info__bg {
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); }
+    .visible .mobile-info__trigger span {
+      background-color: transparent; }
+    .visible .mobile-info__trigger span::before {
+      transform: rotate(-45deg); }
+    .visible .mobile-info__trigger span::after {
+      transform: rotate(45deg); }
+
+.mobile-info ul {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0 0;
+  visibility: hidden;
+  transition: visibility .3s;
+  text-align: right; }
+  .mobile-info ul a {
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 calc(1em + 60px) 0 1em;
+    color: #2A2E54;
+    font-size: .8rem;
+    font-weight: 500;
+    transition: color .2s;
+    text-decoration: none; }
+    .mobile-info ul a::after {
+      /* navigation item icons */
+      content: '';
+      position: absolute;
+      background-size: cover;
+      height: 16px;
+      width: 16px;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%) scale(0); }
+  .mobile-info ul li:first-of-type a::after {
+    /* change custom icon using image sprites */
+    background-image: url(../img/facebook-icon.svg); }
+  .mobile-info ul li:nth-of-type(2) a::after {
+    background-image: url(../img/instagram-icon.svg); }
+  .mobile-info ul li:nth-of-type(3) a::after {
+    background-image: url(../img/youtube-icon.svg); }
+  .mobile-info ul li:nth-of-type(4) a::after {
+    background-image: url(../img/whatsapp-icon.svg); }
+  .mobile-info ul li:nth-of-type(5) a::after {
+    background-image: url(../img/email-icon.svg); }
+  .mobile-info ul span {
+    /* navigation item labels */
+    display: block;
+    opacity: 0;
+    transform: translateX(-25px); }
+
+.mobile-info.visible ul {
+  visibility: visible; }
+  .mobile-info.visible ul a::after {
+    /* navigation item icons */
+    transform: translateY(-50%) scale(1);
+    -webkit-animation: scaleIn .15s backwards;
+            animation: scaleIn .15s backwards;
+    transition: opacity .2s; }
+  .mobile-info.visible ul span {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-animation: slideIn .15s backwards;
+            animation: slideIn .15s backwards;
+    transition: transform .2s; }
+  .no-touch .mobile-info.visible ul a:hover {
+    color: #ffffff; }
+    .no-touch .mobile-info.visible ul a:hover::after {
+      opacity: 1; }
+    .no-touch .mobile-info.visible ul a:hover span {
+      transform: translateX(-5px); }
+  .mobile-info.visible ul li:first-of-type a::after,
+  .mobile-info.visible ul li:first-of-type span {
+    -webkit-animation-delay: .05s;
+            animation-delay: .05s; }
+  .mobile-info.visible ul li:nth-of-type(2) a::after,
+  .mobile-info.visible ul li:nth-of-type(2) span {
+    -webkit-animation-delay: .1s;
+            animation-delay: .1s; }
+  .mobile-info.visible ul li:nth-of-type(3) a::after,
+  .mobile-info.visible ul li:nth-of-type(3) span {
+    -webkit-animation-delay: .15s;
+            animation-delay: .15s; }
+  .mobile-info.visible ul li:nth-of-type(4) a::after,
+  .mobile-info.visible ul li:nth-of-type(4) span {
+    -webkit-animation-delay: .2s;
+            animation-delay: .2s; }
+  .mobile-info.visible ul li:nth-of-type(5) a::after,
+  .mobile-info.visible ul li:nth-of-type(5) span {
+    -webkit-animation-delay: .25s;
+            animation-delay: .25s; }
+
+@-webkit-keyframes scaleIn {
+  from {
+    transform: translateY(-50%) scale(0); }
+  to {
+    transform: translateY(-50%) scale(1); } }
+
+@keyframes scaleIn {
+  from {
+    transform: translateY(-50%) scale(0); }
+  to {
+    transform: translateY(-50%) scale(1); } }
+
+@-webkit-keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
 
 .site-content {
   width: 100%; }
