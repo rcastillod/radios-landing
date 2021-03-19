@@ -118,9 +118,9 @@ header {
     }
 }
 .mobile-info {
-    position: fixed;
+    position: absolute;
 	z-index: 2;
-	top: 40px;
+	top: 20px;
 	right: 5%;
 	pointer-events: none;
     @media screen and (min-width: 768px) {
