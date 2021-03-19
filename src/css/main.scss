@@ -17,11 +17,17 @@ body, html {
 }
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    position: relative;
     width: 100%;
+    @media screen and (min-width: 992px) {
+        height: 100vh;
+    }
     section {
-        padding: 50px;
+        padding: 25px;
+        @media screen and (min-width: 576px) {
+            padding: 50px;
+        }
     }
 }
 
@@ -35,6 +41,9 @@ main {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    @media screen and (max-width: 991px) {
+        padding-bottom: 150px;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -51,6 +60,9 @@ main {
     flex-direction: column;
     position: relative;
     z-index: 1;
+    @media screen and (max-width: 991px) {
+        padding-bottom: 50px;
+    }
     a:not(:last-child) {
         margin-bottom: 1rem;
     }
@@ -62,7 +74,15 @@ main {
     }
 }
 
-/** Right Section */  
+/** Right Section */ 
+.main-info {
+    @media screen and (min-width: 992px) {
+        position: relative;
+    }
+    @media screen and (max-width: 991px) {
+        grid-row: 1 / -1;
+    }
+}
 header {
     display: flex;
     align-items: center;
@@ -87,17 +107,16 @@ header {
         }
     }
 }
-.main-info {
-    position: relative;
-}
 .site-content {
-    max-width: 100%;
     width: 100%;
     @media screen and (min-width: 1536px) {
         max-width: 60%;
     }
     @media screen and (min-width: 1280px) {
         max-width: 80%;
+    }
+    @media screen and (max-width: 575px) {
+        padding: 50px 0;
     }
     &__title {
         h1 {
@@ -127,13 +146,21 @@ header {
     }
 }
 .player {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
+    @media screen and (min-width: 992px) {
+        position: absolute;
+        z-index: 0;
+    }
     h4 {
         color: $primary-color;
         padding-left: 50px;
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
     }
 }
 .player-bar {

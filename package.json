@@ -4,6 +4,7 @@
   "description": "Landing para radios",
   "main": "gulpfile.js",
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "postcss": "^8.2.8"
   },
   "devDependencies": {
@@ -25,7 +26,8 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp prod",
-    "prod": "gulp prod"
+    "prod": "gulp prod",
+    "deploy": "gh-pages -d  dist"
   },
   "repository": {
     "type": "git",
@@ -43,5 +45,5 @@
   "bugs": {
     "url": "https://github.com/manjumjn/gulp-with-tailwindcss/issues"
   },
-  "homepage": "https://github.com/manjumjn/gulp-with-tailwindcss#readme"
+  "homepage": "https://genesman.github.io/radios-landing/"
 }
