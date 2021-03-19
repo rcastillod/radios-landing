@@ -29,8 +29,8 @@ var swiper = new Swiper('.swiper-container', {
 const playButton = document.getElementById("play-btn");
 const playButtonImg = document.querySelector(".play-icon");
 const url = window.location.hostname;
-const img1 = url+"/img/play-icon.svg";
-const img2 = url+"/img/pause-icon.svg";
+const img1 = "./img/play-icon.svg";
+const img2 = "./img/pause-icon.svg";
 const playerBar = document.querySelector(".player-bar");
 
 playButton.addEventListener('click', (e) => {
