@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Radios 1</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    
+    <main>
+        <section class="advertisements"  style="overflow: hidden">
+            <div class="info-links">
+                <a href="https://www.servel.cl/" target="_blank"><img src="./img/servel.png" alt="Logo Servel"></a>
+                <a href="https://www.archi.cl/" target="_blank"><img src="./img/logo-archi.png" alt="Logo Archi"></a>
+            </div>
+            <div class="ads">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="./img/banner-1.jpg" alt="Ads"></div></a>
+                        <div class="swiper-slide"><a href="#"><img src="./img/banner-2.jpg" alt="Ads"></div></a>
+                        <div class="swiper-slide"><a href="#"><img src="./img/banner-3.jpg" alt="Ads"></div></a>
+                    </div>
+                </div>
+        </section>
+        <section class="main-info">
+            <header>
+                <div class="logo"><a href="#"><img src="./img/logo-l2.png" alt="Logo Radio" width="150"></a></div>
+                <div class="social">
+                    <a href="#" class="social__item"><img src="./img/facebook-icon.svg" alt="Facebook Icon"></a>
+                    <a href="#" class="social__item"><img src="./img/instagram-icon.svg" alt="Instagram Icon"></a>
+                    <a href="#" class="social__item"><img src="./img/youtube-icon.svg" alt="Youtube Icon"></a>
+                    <a href="#" class="social__item"><img src="./img/whatsapp-icon.svg" alt="Whatsapp Icon"></a>
+                    <a href="#" class="social__item"><img src="./img/email-icon.svg" alt="Email Icon"></a>
+                </div>
+                <div class="mobile-info">
+                    <a class="mobile-info__trigger" href="#0">
+                        Menu
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <ul>
+                        <li><a href="#0"><span>Facebook</span></a></li>
+                        <li><a href="#0"><span>Instagram</span></a></li>
+                        <li><a href="#0"><span>Youtube</span></a></li>
+                        <li><a href="#0"><span>Whatsapp</span></a></li>
+                        <li><a href="#0"><span>Email</span></a></li>
+                    </ul>
+                    <span aria-hidden="true" class="mobile-info__bg"></span>
+                </div>
+            </header>
+            <div class="site-content">
+                <div class="site-content__title">
+                    <h1>Lorem <span>ipsum</span> dolor <span>sit.</span></h1>
+                </div>
+                <div class="site-content__description">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error minus perferendis nesciunt distinctio labore libero iure consequuntur officiis ducimus numquam, nihil ratione commodi quis nemo corporis facilis laboriosam asperiores impedit sit quae illo voluptate aut! Doloremque, obcaecati!</p>
+                </div>
+            </div>
+            <div class="player">
+                <h4>Escuchar ahora</h4>    
+                <div class="player-bar">
+                    <div class="play">
+                        <a href="#" id="play-btn"></a>
+                    </div>
+                    <div class="volume">
+                        <img src="./img/volume-min-icon.svg" alt="Volume Min Icon" class="min" width="15">
+                        <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" class="volume-slider">
+                        <img src="./img/volume-max-icon.svg" alt="Volume Max Icon" class="max" width="15">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/scripts.js"></script>
+
+</body>
+</html>
