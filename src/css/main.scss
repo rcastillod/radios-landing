@@ -484,8 +484,8 @@ header {
             // Range Handle
             &::-webkit-slider-thumb {
                 appearance: none;
-                width: 20px;
-                height: 20px;
+                width: 15px;
+                height: 15px;
                 border-radius: 50%;
                 background: $light-color;
                 cursor: pointer;
@@ -501,8 +501,8 @@ header {
             }
 
             &::-moz-range-thumb {
-                width: 20px;
-                height: 20px;
+                width: 15px;
+                height: 15px;
                 border: 0;
                 border-radius: 50%;
                 background: $primary-color;
