@@ -31,15 +31,28 @@ var swiper = new Swiper('.swiper-container', {
 const playButton = document.getElementById("play-btn");
 const playButtonImg = document.querySelector(".play-icon");
 const pauseButtonImg = document.querySelector(".pause-icon");
-const url = window.location.hostname;
+const volumeSlider = document.querySelector(".volume-slider");
+const audio = document.getElementById("music");
 const img1 = "./img/play-icon.svg";
 const img2 = "./img/pause-icon.svg";
 const playerBar = document.querySelector(".player-bar");
+let playState = "play";
 
-playButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    playerBar.classList.toggle("playing");
-})
+playButton.addEventListener('click', () => {
+    if(playState === 'play') {
+        audio.play();
+        playerBar.classList.add("playing");
+        playState = 'pause';
+    } else {
+        audio.pause();
+        playerBar.classList.remove("playing");
+        playState = 'play';
+    }
+});
+volumeSlider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    audio.volume = value / 100;
+});
 
 /** Mobile Menu Info */
 jQuery(document).ready(function(){
