@@ -399,8 +399,8 @@ header {
       .player-bar .volume input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
                 appearance: none;
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         border-radius: 50%;
         background: #ffffff;
         cursor: pointer;
@@ -411,8 +411,8 @@ header {
       .player-bar .volume input[type="range"]:active::-webkit-slider-thumb {
         background: #2A2E54; }
       .player-bar .volume input[type="range"]::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         border: 0;
         border-radius: 50%;
         background: #2A2E54;
