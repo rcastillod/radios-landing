@@ -366,8 +366,13 @@ header {
       display: block;
       background-image: url(../img/play-icon.svg);
       background-size: cover;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       width: 30px;
       height: 33px; }
+      .player-bar .play #play-btn:focus {
+        outline: none; }
     .player-bar .play img {
       vertical-align: bottom; }
   .player-bar__track {

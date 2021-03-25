@@ -444,8 +444,14 @@ header {
             display: block;
             background-image: url(../img/play-icon.svg);
             background-size: cover;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
             width: 30px;
             height: 33px;
+            &:focus {
+                outline: none;
+            }
         }
         img {
             vertical-align: bottom;
